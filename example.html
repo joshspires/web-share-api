@@ -1,0 +1,19 @@
+<button id="device_shr_btn" style="btn">Share</button>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const title = document.title;
+		const description = document.querySelector('meta[name="description"]').getAttribute('content');
+        	const url = document.location.href;
+
+        	const shareData = {
+            		title: title,
+            		text: description,
+			url: url
+        	};
+
+        	const btn = document.getElementById('device_shr_btn');
+        		btn.addEventListener('click', () => {
+           		navigator.share(shareData);
+        	});
+    	});
+</script>
